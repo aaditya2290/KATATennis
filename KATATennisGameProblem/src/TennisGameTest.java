@@ -60,6 +60,13 @@ public class TennisGameTest {
 			
 	}
 	
+	@Test
+	public void testInvalidGame() {
+		createGame(10,3);
+		assertEquals("Invalid scores for game",game.getGameScore());
+			
+	}
+	
 	public void createGame(Integer firstPlayerScore,Integer secondPlayerScore)
 	{
 		for (int i=0;i<firstPlayerScore;i++)
