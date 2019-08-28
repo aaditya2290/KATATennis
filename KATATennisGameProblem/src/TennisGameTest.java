@@ -50,6 +50,16 @@ public class TennisGameTest {
 			
 	}
 	
+	@Test
+	public void testDeuce() {
+		createGame(3,3);
+		assertEquals("Deuce",game.getGameScore());
+		game.resetScores();
+		createGame(5,5);
+		assertEquals("Deuce",game.getGameScore());
+			
+	}
+	
 	public void createGame(Integer firstPlayerScore,Integer secondPlayerScore)
 	{
 		for (int i=0;i<firstPlayerScore;i++)
