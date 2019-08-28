@@ -63,7 +63,10 @@ public class TennisGameTest {
 	@Test
 	public void testInvalidGame() {
 		createGame(10,3);
-		assertEquals("Invalid scores for game",game.getGameScore());
+		assertEquals("Invalid input scores for game",game.getGameScore());
+		game.resetScores();
+		createGame(5,8);
+		assertEquals("Invalid input scores for game",game.getGameScore());
 			
 	}
 	

@@ -19,7 +19,9 @@ public class TennisGame {
 		return "Love All";
 		else 
 		{
-		if (playerWinsGame()) // score if one player has won game
+		if (isInvalid())
+		return "Invalid input scores for game";
+		else if (playerWinsGame()) // score if one player has won game
 		{
 			if (firstPlayerScore>secondPlayerScore)
 			return getFirstPlayerName()+" wins";
@@ -54,6 +56,11 @@ public class TennisGame {
 		else if (score==3)
 		return "Forty";
 		else return "Invalid score";
+			
+	}
+	public boolean isInvalid()
+	{
+		return (firstPlayerScore>4 && firstPlayerScore>secondPlayerScore+2)|| (secondPlayerScore>4 && secondPlayerScore>firstPlayerScore+2);
 			
 	}
 	
