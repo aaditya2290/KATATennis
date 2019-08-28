@@ -44,7 +44,10 @@ public class TennisGameTest {
 	public void testAdvantage() {
 		createGame(3,4);
 		assertEquals("Advantage Player-2",game.getGameScore());
-		
+		game.resetScores();
+		createGame(5,4);
+		assertEquals("Advantage Player-1",game.getGameScore());
+			
 	}
 	
 	public void createGame(Integer firstPlayerScore,Integer secondPlayerScore)

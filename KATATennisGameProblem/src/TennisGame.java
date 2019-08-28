@@ -15,18 +15,25 @@ public class TennisGame {
 	
 	public String getGameScore()
 	{
-		if (firstPlayerScore==0 && secondPlayerScore==0)
+		if (firstPlayerScore==0 && secondPlayerScore==0) //score at start of game
 		return "Love All";
 		else 
 		{
-		if (playerWinsGame())
+		if (playerWinsGame()) // score if one player has won game
 		{
 			if (firstPlayerScore>secondPlayerScore)
 			return getFirstPlayerName()+" wins";
 			else
 			return getSecondPlayerName()+" wins";
 		}
-		else if (firstPlayerScore==secondPlayerScore)
+		else if (isAdvantage()) //score in case of advantage
+		{
+			if (firstPlayerScore>secondPlayerScore)
+			return "Advantage "+getFirstPlayerName();
+			else
+			return "Advantage "+getSecondPlayerName();
+		}
+		else if (firstPlayerScore==secondPlayerScore) // score in case of equal ball scores
 		return calculateScore(firstPlayerScore)+" All";
 		else
 		return calculateScore(firstPlayerScore)+"-"+calculateScore(secondPlayerScore);
@@ -45,6 +52,12 @@ public class TennisGame {
 		else if (score==3)
 		return "Forty";
 		else return "Invalid score";
+			
+	}
+	
+	public boolean isAdvantage()
+	{
+		return (firstPlayerScore>3 && firstPlayerScore==secondPlayerScore+1)||(secondPlayerScore>3 && (secondPlayerScore==firstPlayerScore+1));
 			
 	}
 	
