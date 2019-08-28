@@ -33,6 +33,8 @@ public class TennisGame {
 			else
 			return "Advantage "+getSecondPlayerName();
 		}
+		else if (isDeuce())
+		return "Deuce";
 		else if (firstPlayerScore==secondPlayerScore) // score in case of equal ball scores
 		return calculateScore(firstPlayerScore)+" All";
 		else
@@ -52,6 +54,12 @@ public class TennisGame {
 		else if (score==3)
 		return "Forty";
 		else return "Invalid score";
+			
+	}
+	
+	public boolean isDeuce()
+	{
+		return (firstPlayerScore>=3 && firstPlayerScore==secondPlayerScore);
 			
 	}
 	
