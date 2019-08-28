@@ -17,8 +17,13 @@ public class TennisGame {
 	{
 		if (firstPlayerScore==0 && secondPlayerScore==0)
 		return "Love All";
+		else 
+		{
+		if (firstPlayerScore==secondPlayerScore)
+		return calculateScore(firstPlayerScore)+" All";
 		else
 		return calculateScore(firstPlayerScore)+"-"+calculateScore(secondPlayerScore);
+		}
 				
 	}
 	
