@@ -34,6 +34,17 @@ public class TennisGameTest {
 	public void testPlayerWinsGame() {
 		createGame(4,1);
 		assertEquals("Player-1 wins",game.getGameScore());
+		game.resetScores();
+		createGame(2,4);
+		assertEquals("Player-2 wins",game.getGameScore());
+		
+	}
+	
+	@Test
+	public void testAdvantage() {
+		createGame(3,4);
+		assertEquals("Advantage Player-2",game.getGameScore());
+		
 	}
 	
 	public void createGame(Integer firstPlayerScore,Integer secondPlayerScore)
