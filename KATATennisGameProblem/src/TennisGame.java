@@ -19,7 +19,14 @@ public class TennisGame {
 		return "Love All";
 		else 
 		{
-		if (firstPlayerScore==secondPlayerScore)
+		if (playerWinsGame())
+		{
+			if (firstPlayerScore>secondPlayerScore)
+			return getFirstPlayerName()+" wins";
+			else
+			return getSecondPlayerName()+" wins";
+		}
+		else if (firstPlayerScore==secondPlayerScore)
 		return calculateScore(firstPlayerScore)+" All";
 		else
 		return calculateScore(firstPlayerScore)+"-"+calculateScore(secondPlayerScore);
@@ -41,6 +48,12 @@ public class TennisGame {
 			
 	}
 	
+	public boolean playerWinsGame()
+	{
+		return (firstPlayerScore>=4 && firstPlayerScore>=secondPlayerScore+2)||(secondPlayerScore>=4 && secondPlayerScore>=firstPlayerScore+2);
+			
+	}
+	
 	public void firstPlayerWinsBall()
 	{
 		firstPlayerScore++;	
@@ -50,6 +63,14 @@ public class TennisGame {
 	{
 		secondPlayerScore++;	
 	}
+	
+	public void resetScores()
+	{
+		firstPlayerScore=0;
+		secondPlayerScore=0;
+	}
+	
+	
 	
 	public String getFirstPlayerName() {
 		return firstPlayerName;
