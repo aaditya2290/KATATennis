@@ -13,7 +13,7 @@ public class TennisGame {
 	
 	public String getGameScore()
 	{
-		return "";
+		return "Love All";
 	}
 	
 	public String getFirstPlayerName() {
