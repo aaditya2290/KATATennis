@@ -16,5 +16,11 @@ public class TennisGameTest {
 	public void testInitialGameScore() {
 		assertEquals("Love All",game.getGameScore());
 	}
+	
+	@Test
+	public void testPlayerOneWinsFirstBall() {
+		game.firstPlayerWinsBall();
+		assertEquals("Fifteen-Love",game.getGameScore());
+	}
 
 }

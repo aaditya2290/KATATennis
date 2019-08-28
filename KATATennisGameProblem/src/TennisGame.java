@@ -16,6 +16,11 @@ public class TennisGame {
 		return "Love All";
 	}
 	
+	public void firstPlayerWinsBall()
+	{
+		
+	}
+	
 	public String getFirstPlayerName() {
 		return firstPlayerName;
 	}
