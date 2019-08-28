@@ -18,9 +18,16 @@ public class TennisGameTest {
 	}
 	
 	@Test
-	public void testPlayerOneWinsFirstBall() {
+	public void testPlayerWinsBall() {
 		game.firstPlayerWinsBall();
 		assertEquals("Fifteen-Love",game.getGameScore());
+	}
+	
+	@Test
+	public void testPlayersWinEqualBalls() {
+		game.firstPlayerWinsBall();
+		game.secondPlayerWinsBall();
+		assertEquals("Fifteen All",game.getGameScore());
 	}
 
 }

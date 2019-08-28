@@ -3,6 +3,8 @@ public class TennisGame {
 	
 	private String firstPlayerName;
 	private String secondPlayerName;
+	private Integer firstPlayerScore=0;
+	private Integer secondPlayerScore=0;
 
 	TennisGame(String firstPlayer,String secondPlayer)
 	{
@@ -13,12 +15,35 @@ public class TennisGame {
 	
 	public String getGameScore()
 	{
+		if (firstPlayerScore==0 && secondPlayerScore==0)
 		return "Love All";
+		else
+		return calculateScore(firstPlayerScore)+"-"+calculateScore(secondPlayerScore);
+				
+	}
+	
+	public String calculateScore(Integer score)
+	{
+		if (score==0)
+		return "Love";
+		else if (score==1)
+		return "Fifteen";
+		else if (score==2)
+		return "Thirty";
+		else if (score==3)
+		return "Forty";
+		else return "Invalid score";
+			
 	}
 	
 	public void firstPlayerWinsBall()
 	{
-		
+		firstPlayerScore++;	
+	}
+	
+	public void secondPlayerWinsBall()
+	{
+		secondPlayerScore++;	
 	}
 	
 	public String getFirstPlayerName() {
